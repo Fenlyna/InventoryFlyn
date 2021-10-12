@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/name/{name}/{nrp}', function ($name,$nrp) {
+    return "Hai " . $name . $nrp;
+})->where('name', '[A-za-z]+');
