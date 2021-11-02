@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::get('/name/{name}/{nrp}', function ($name,$nrp) {
     return "Hai " . $name . $nrp;
 })->where('name', '[A-za-z]+');
+
+
+Route::get('/person', 'PersonController@index');
+
+Route::get('/person/show/{param}', 'PersonController@show');
+
+Route::resource('/student', 'StudentController');
