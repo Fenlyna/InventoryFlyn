@@ -22,6 +22,12 @@ Route::get('/name/{name}/{nrp}', function ($name,$nrp) {
 
 Route::get('/person', 'PersonController@index');
 
+Route::get('/homepage', function(){
+    return view('home' , ["name" => "Irham N"]);
+});
+
 Route::get('/person/show/{param}', 'PersonController@show');
 
-Route::resource('/student', 'StudentController');
+Route::get('/person/send-data', 'PersonController@sendData');
+
+Route::get('/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}','StudentController@myCourse');

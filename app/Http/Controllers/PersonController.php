@@ -6,11 +6,18 @@ use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-    private $name = "Irham Nur Kautsar";
     private $code = "190914006";
+    private $name = "Irham Nur Kautsar";
 
     public function index() {
-        return $this->name ." ". $this->code;
+        return view("person.index");
+    }
+
+    public function sendData() {
+        $code = $this->code;
+        $name = $this->name;
+
+        return view("person.sendData", compact('code', 'name'));
     }
 
     public function show($param){
